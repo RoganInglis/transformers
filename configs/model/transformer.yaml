@@ -1,0 +1,25 @@
+_target_: src.models.transformer_module.TransformerLitModule
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+  label_smoothing: 0.1
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  _target_: src.models.components.transformers.TransformerWrapper
+  vocab_size: 32000
+  dim_model: 512
+  num_heads: 8
+  dim_heads: 64
+  dim_inner: 2048
+  num_layers: 6
+  dropout: 0.1
