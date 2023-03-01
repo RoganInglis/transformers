@@ -4,7 +4,7 @@ torchvision>=0.11.0
 torchtext>=0.13.0
 torchdata
 pytorch-lightning==1.7.1
-torchmetrics==0.10.0
+torchmetrics==0.11.3
 
 # --------- hydra --------- #
 hydra-core==1.2.0
